@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="ru">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Богатое меню и веселое настроение, вкусные смузи и уютную обстановку, внимательнейшее отношение к вашим пожеланиям к составу коктейля и немедленное их исполнение. Заходите, мы ждем с нетерпением!">
+	<meta name="keywords" content="Smoothies-mama, Smoothies, Смузи-Мама, Смузи">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <title>Smoothies-Mama</title>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/dls.css' %}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+    	.content {
+    	    background-image: url("{% static 'img/main_theme.jpg' %}");
+    		background-size: 100% auto;
+    		background-repeat: no-repeat;
+    		background-position: center top;
+    	}
+/*    	.Prime {
+    		background-color: pink;
+    	}*/
+    </style>
+
+  </head>
+
+  	<body class="Prime">
+	
+		<!-- 	ЛОГОТИП 	-->
+
+		<div class="header container-fluid hidden-xs">
+			<div class="logo row">
+				<div class="logo_left col-lg-4 col-md-4 col-sm-4 hidden-xs">
+					<h4><em>
+						Санкт-Петербург, <br>
+						Лиговский проспект 74, <br>
+						Лофт-проект «Этажи», <br>
+						Контейнерная улица, <br>
+						кафе 1,15.
+					</em></h4>
+				</div>
+				<div class="logo_center col-lg-4 col-md-4 col-sm-4">
+					<a href="main.html">
+						<img src="{% static 'img/main_logo.jpg' %}" alt="Logo">
+					</a>
+				</div>
+				<div class="logo_right col-lg-4 col-md-4 col-sm-4 hidden-xs">
+					<h4><em>
+						Время работы: <br>
+						с 11:00 до 21:00 <br>
+						ежедневно
+					</em></h4>
+				</div>
+			</div>
+		</div>
+
+		<!-- 	КОНТЕНТ 	-->
+
+		<div class="content">
+
+		<!-- Н А В И Г А Ц И Я  -->
+
+			<div class="nav_st navbar spclr">
+				<div class="nav_but conteiner-fluid">
+					<div>
+					<button class="navbar-toggler visible-xs" type="button" data-toggle="collapse" 
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+					aria-expanded="false" aria-label="Toggle navigation">
+			  		  	<span class="glyphicon glyphicon-align-right" aria-hidden="true">
+			  		  	<img src="{% static 'img/main_logo.jpg' %}" width="75" height="75" alt="">
+			  		  	<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+					</button>
+					</div>
+				</div>
+				<div class="collapse navbar-collapse spclr" id="navbarSupportedContent">
+					{% block navig %}
+					<ul class="nav nav-pills nav-justified">
+						<li role="Main" class="active"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Главная</a></li>
+						<li role="Catalog"><a href="catalog.html"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Каталог</a></li>
+						<li role="Bag"><a href="bag.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Корзина</a></li>
+						<li role="About"><a href="about.html"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> История</a></li>
+						<li role="Contact"><a href="contact.html"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Контакты</a></li>
+					</ul>
+					{% endblock navig %}
+				</div>
+			</div>
+
+			{% block cont %}
+
+			<h1 class="text-center">Контент</h1>
+
+	    	<form method="POST" action="#" id="mail_form">
+				{% csrf_token %}
+				<div>
+					{{News_Form}}
+				</div>
+	   		</form>
+
+			{% endblock cont %}
+			
+		</div>
+
+		<!-- 	ПОДВАЛ 	-->
+		<hr>
+
+		<footer>	
+			<div class="footer">
+				<div class="container hidden-xs">
+					<p>Все материалы сайта принадлежат компании "Смузи Мама". <br>
+			  		Копирование без согласия правообладателя запрещено.</p>	
+				</div>
+			  	<div class="container visible-xs">
+			  		<p>Все права защищены. </p>
+			  	</div>
+			</div>
+		</footer>
+	  	
+
+
+	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+
+ 	 </body>
+</html>

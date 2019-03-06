@@ -1,0 +1,96 @@
+{% extends "main.html" %}
+
+{% block navig %}
+<ul class="nav nav-pills nav-justified">
+	<li role="Main"><a href="main.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Главная</a></li>
+	<li role="Catalog"><a href="catalog.html"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Каталог</a></li>
+	<li role="Bag"><a href="bag.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Корзина</a></li>
+	<li role="About"><a href="about.html"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> История</a></li>
+	<li role="Contact" class="active"><a href="#"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Контакты</a></li>
+</ul>
+{% endblock navig %}
+
+{% block cont %}
+
+<br>
+
+<h1 class="text-center">Как нас найти?</h1>
+
+<br>
+
+<div class="conteiner contact_prime">
+	<div class="conteiner map_set">
+		<div class="txt-col col-lg-6 col-md-6 col-sm-6">
+			<div class="spclr">
+				<br>
+				<div class="txt-pnl panel panel-default">
+  					<div class="panel-body spclr">
+						<h4 align="center">
+							Санкт-Петербург, <br>
+							Лиговский проспект 74, <br>
+							Лофт-проект «Этажи», <br>
+							Контейнерная улица, кафе 1,15. <br>
+							Время работы: с 11:00 до 21:00 <br>
+							ежедневно
+						</h4>
+ 					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6">
+			<div class="map text-center spclr">
+				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1ef09a656992cb8bdd4e710735f1609be6826245790d7af3e6b8ee6c66b27f63&amp;source=constructor" height="400" frameborder="0"></iframe>
+			</div> 
+		</div>
+	</div>
+</div>
+
+<div class="clear"><br><hr><br></div>
+
+<div class="container">
+	<div class="panel panel-success">
+		<div class="panel-heading">
+			<h3 class="text-center panel-title">Ваши предложения и пожелания</h3>
+	  	</div>
+	  	<div class="panel-body">
+	    	<div class="mail_form">
+	    		<form method="POST" action="#" id="mail_form">
+				{% csrf_token %}
+
+
+
+
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Ф.И.О.</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Иванов Иван Иванович">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput2">Email</label>
+    <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Ваши пожелания / предложения</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <button class="btn btn-success" type="submit">Отправить</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+	    		</form>
+	    	</div>
+	  	</div>
+	</div>
+</div>
+
+{% endblock cont %}

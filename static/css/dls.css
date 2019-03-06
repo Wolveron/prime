@@ -1,0 +1,172 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+.spclr {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.header {
+	min-height: 244px;
+	max-height: 244px;
+}
+
+	.logo_left {
+		text-align: center;
+		height: 244px;
+	}
+
+	.logo_center {
+		text-align: center;
+	}
+		.logo_center img{
+			border:solid 0px;
+			border-radius: 95px;
+			clear: both;
+		}
+
+	.logo_right {
+		text-align: center;
+		height: 244px;
+	}
+
+	.logo_left h4, .logo_right h4 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 200px;
+		font-family: Courier New, Courier, monospace;
+		font-size: 15px;
+	}
+
+.navbar button, .navbar button:hover, .navbar button:focus {
+	border: none;
+	margin: 0;
+	padding: 1px;
+	background-color: white;
+	font-size: 25px;
+	border: solid 1px black;
+	border-radius: 37px;
+	text-align: center;
+	outline: none;
+}
+
+.nav_st {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.nav_but {	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nav-pills>li>a {
+    border: solid 2px black;
+    border-width: 2px 1px 2px 1px;
+    border-radius: 26px;
+	background-color: gold;
+	font-size: 20px;
+	color: black;
+}
+.nav-pills>li.active>a, 
+.nav-pills>li.active>a:focus {
+    color: white;
+    background-color: yellowgreen;
+}
+
+.nav-pills>li>a:hover,
+.nav-pills>li.active>a:hover {
+    color: white;
+    background-color: green;	
+}
+
+.content {
+	min-height: 100%;
+	min-width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.footer {
+	background-color: black;
+	color: white;
+	text-align: center;
+	height: 50px;
+	margin: 0;
+	padding: 5px;
+}
+		.footer p {
+			margin: 0;
+			padding: 0;
+		}
+
+.clear {
+	clear: both;
+}
+
+/*---------------------------------------------------*/
+/*------------------- A B O U T ---------------------*/
+/*---------------------------------------------------*/
+		
+.about1 img {
+	width: 80%;
+	max-width: 300px;
+	border: solid 2px orange;
+	border-radius: 10px;
+}
+
+.about2 img {
+	width: 80%;
+	border: solid 2px orange;
+	border-radius: 10px;
+}
+
+.txt-pnl {
+	border-style: ridge;
+	border-width: 8px;
+	border-color: green;
+}
+
+#vegetarian {
+	text-decoration: none;
+	color: green;
+}
+
+.interview {
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+    .about1, .about2, .map_set {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 767px) {
+    .interview iframe {
+		width: 80%;
+		height: auto;
+	}
+}
+
+/*---------------------------------------------------*/
+/*----------------- C O N T A C T -------------------*/
+/*---------------------------------------------------*/
+
+.map iframe {
+	width: 100%;
+}
+
+@media (max-width: 767px) {
+	.map iframe {
+		height: auto;
+	}
+}
