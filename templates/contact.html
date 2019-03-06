@@ -57,37 +57,22 @@
 	    		<form method="POST" action="#" id="mail_form">
 				{% csrf_token %}
 
-
-
-
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Ф.И.О.</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Иванов Иван Иванович">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput2">Email</label>
-    <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Ваши пожелания / предложения</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-  <button class="btn btn-success" type="submit">Отправить</button>
-</form>
-
-
-
-
-
-
-
-
-
-
-
+				  <div class="form-group">
+				    <label for="exampleFormControlInput1">Ф.И.О.</label>
+				    <input type="text" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Иванов Иван Иванович">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleFormControlInput2">Email</label>
+				    <input type="email" class="form-control" name="email" id="exampleFormControlInput2" placeholder="name@example.com">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleFormControlTextarea1">Ваши пожелания / предложения</label>
+				    <textarea class="form-control" name="context" id="exampleFormControlTextarea1" rows="3"></textarea>
+				  </div>
+				  <button class="btn btn-success" type="submit">Отправить</button>
 
 	    		</form>
+
 	    	</div>
 	  	</div>
 	</div>
