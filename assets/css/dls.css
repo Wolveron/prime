@@ -132,10 +132,19 @@ html, body {
 	border-radius: 15px;
 }
 
-/*.news-post-img {
-	max-width: 150px;
-	max-height: 150px;
-}*/
+.news-post-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 200px;
+
+}
+
+.plato {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
 /*---------------------------------------------------*/
 /*------------------- A B O U T ---------------------*/
