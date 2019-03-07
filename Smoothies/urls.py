@@ -26,4 +26,6 @@ urlpatterns = [
     path('bag.html', views.bag),
     path('about.html', views.about),
     path('contact.html', views.contact),
+    path('admin.html', views.admin),
+    path('panel.html', views.panel),
 ]

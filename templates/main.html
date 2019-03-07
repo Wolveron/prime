@@ -100,16 +100,44 @@
 			</div>
 
 			{% block cont %}
-
-			<h1 class="text-center">Контент</h1>
-
-	    	<form method="POST" action="#" id="mail_form">
-				{% csrf_token %}
+			<br>
+			<div class="container slogan">
 				<div>
-					{{News_Form}}
+				<h3 class="text-center">
+					Яркие моменты внутри!
+				</h3>
 				</div>
-	   		</form>
+			</div>
+			<br>
+			{% for New in News %}
+			<div class="news-post container">
+				<div class="news-post-img clear col-lg-3 col-md-3 col-sm-3">
+					<a href="#">
+						<img class="news-post-image" width = '100%' src="{% static 'img/place1.jpg' %}" alt="Picture">
+					</a>
+				</div>
+				<div class="news-post-text col-lg-9 col-md-9 col-sm-9">
+					<h4 class="news-post-title">{{New.title}}</h4>
+					<h5 class="news-post-date">{{New.date}}</h5>
+					<h5 class="news-post-content">{{New.content}}</h5> 
+				</div>
+			</div>
+<!-- 			<div class="media">
+				<div class="media-left media-middle">
+					<a href="#">
+						<img class="media-object" src="{% static 'img/place1.jpg' %}" alt="Picture">
+					</a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">{{New.title}}</h4>
+					<h5>{{New.date}}</h5>
+					{{New.content}}
+				</div>
+			</div> -->
+			<hr>
+			{% endfor %}
 
+	    	
 			{% endblock cont %}
 			
 		</div>
@@ -120,8 +148,10 @@
 		<footer>	
 			<div class="footer">
 				<div class="container hidden-xs">
+					<a href="admin.html">
 					<p>Все материалы сайта принадлежат компании "Смузи Мама". <br>
 			  		Копирование без согласия правообладателя запрещено.</p>	
+					</a>
 				</div>
 			  	<div class="container visible-xs">
 			  		<p>Все права защищены. </p>

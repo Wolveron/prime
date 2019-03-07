@@ -14,6 +14,22 @@ html, body {
 	max-height: 244px;
 }
 
+.slogan {
+	background-color: pink;
+	border: outset 3px purple;
+	border-radius: 20px;
+	width: 85%;
+	max-width: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+}
+.slogan h3 {
+	margin: 0;
+	padding: 0;
+}
+
 	.logo_left {
 		text-align: center;
 		height: 244px;
@@ -109,6 +125,17 @@ html, body {
 .clear {
 	clear: both;
 }
+
+.news-post-text {
+	background-color: white;
+	border: solid 2px greenyellow;
+	border-radius: 15px;
+}
+
+/*.news-post-img {
+	max-width: 150px;
+	max-height: 150px;
+}*/
 
 /*---------------------------------------------------*/
 /*------------------- A B O U T ---------------------*/
