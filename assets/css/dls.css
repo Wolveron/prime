@@ -29,11 +29,21 @@ html, body {
 /*---------------------------------------------------*/
 
 .header {
-	color: gold;
+	color: white;
 	margin: 0;
 	padding: 5px;
 	border-bottom: ridge 4px gold;
-	background-color: black;
+	background-color: green;
+	text-shadow: 1px 1px 2px black, 0 0 1em red;
+}
+.address-box {
+	border: ridge 7px gold;
+	border-radius: 30px;
+	background-color: white;
+	color: black;
+	width: 95%;
+	padding: 5px;
+	text-shadow: none;
 }
 .logo {
 	width: 100%;
@@ -71,8 +81,7 @@ html, body {
 	justify-content: center;
 }
 .nav-pills>li>a {
-    border: solid 2px black;
-    border-width: 2px 1px 2px 1px;
+    border: ridge 2px black;
     border-radius: 26px;
 	background-color: gold;
 	font-size: 20px;
@@ -82,11 +91,13 @@ html, body {
 .nav-pills>li.active>a:focus {
     color: white;
     background-color: yellowgreen;
+    text-shadow: 1px 1px 2px black, 0 0 1em green;
 }
 .nav-pills>li>a:hover,
 .nav-pills>li.active>a:hover {
     color: white;
-    background-color: green;	
+    background-color: green;
+    text-shadow: 1px 1px 2px black;	
 }
 .footer {
 	background-color: black;
@@ -108,14 +119,6 @@ html, body {
 /*-------------------- M A I N ----------------------*/
 /*---------------------------------------------------*/
 
-.address-box {
-	border: ridge 7px red;
-	border-radius: 30px;
-	background-color: white;
-	color: black;
-	width: 95%;
-	padding: 5px;
-}
 .news-post {
 	padding: 7px;
 	border: ridge 4px green;
