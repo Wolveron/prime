@@ -1,25 +1,17 @@
-{% extends "main.html" %}
+{% extends "base.html" %}
 
 {% load static %}
 
 {% block navig %}
-<ul class="nav nav-pills nav-justified">
 	<li role="Main"><a href="main.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Главная</a></li>
 	<li role="Catalog"><a href="catalog.html"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Каталог</a></li>
 	<li role="Bag"><a href="bag.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Корзина</a></li>
 	<li role="About" class="active"><a href="#"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> История</a></li>
 	<li role="Contact"><a href="contact.html"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Контакты</a></li>
-</ul>
 {% endblock navig %}
 
 {% block cont %}
-<!-- <style type="text/css">
-	.content {
-		background-position: 
-		background-image: url('{% static 'img/main_theme.jpg' %}');
-		background-image: url('{% static 'img/main.jpg' %}');
-	}
-</style> -->
+
 <br>
 
 <h1 class="text-center">Как возник проект "Смузи-Мама"?</h1>
@@ -40,7 +32,7 @@
 	</div>
 </div>
 
-<div class="clear"><br><hr><br></div>
+<hr class="clear">
 
 <div class="clear about2 conteiner-fluid">
 	<div class="text-center col-lg-6 col-lg-push-6 col-md-6 col-md-push-6 col-sm-6 col-sm-push-6">
@@ -58,7 +50,7 @@
 	</div>
 </div>
 
-<div class="clear"><br><hr><br></div>
+<hr class="clear">
 
 <div class="clear about2 conteiner-fluid">
 	<div class="text-center col-lg-6 col-md-6 col-sm-6">
@@ -79,7 +71,7 @@
 	</div>
 </div>
 
-<div class="clear"><br><hr><br></div>
+<hr class="clear">
 
 <div class="clear about2 conteiner-fluid">
 	<div class="text-center col-lg-6 col-lg-push-6 col-md-6 col-md-push-6 col-sm-6 col-sm-push-6">
@@ -95,10 +87,12 @@
 	</div>
 </div>
 
-<div class="clear"><br><hr><br></div>
+<hr class="clear">
 
-<div class="interview">
+<div class="interview text-center">
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/YKHHfU2--f0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+<hr class="clear">
 
 {% endblock cont %}

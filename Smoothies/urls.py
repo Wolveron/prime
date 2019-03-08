@@ -28,4 +28,5 @@ urlpatterns = [
     path('contact.html', views.contact),
     path('admin.html', views.admin),
     path('panel.html', views.panel),
+    path('testpage', views.testpage),
 ]

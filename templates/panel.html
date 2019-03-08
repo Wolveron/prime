@@ -1,13 +1,11 @@
-{% extends "main.html" %}
+{% extends "base.html" %}
 
 {% block navig %}
-<ul class="nav nav-pills nav-justified">
 	<li role="Main"><a href="main.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Главная</a></li>
 	<li role="Catalog"><a href="catalog.html"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Каталог</a></li>
 	<li role="Bag"><a href="bag.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Корзина</a></li>
 	<li role="About"><a href="about.html"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> История</a></li>
 	<li role="Contact"><a href="contact.html"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Контакты</a></li>
-</ul>
 {% endblock navig %}
 
 {% block cont %}
@@ -25,6 +23,10 @@
 		<div class="form-group">
 			<label for="TitleNews">Содержание</label>
 			<textarea class="form-control" id="ContentNews" name="ContentNews"></textarea>
+		</div>
+		<div class="form-group">
+			<label for="TitleNews">Выберите изображение</label>
+			<input type="file" class="form-control" id="ImageNews" name="ImageNews">
 		</div>
 		<button type="submit" class="btn btn-success">Опубликовать</button>
 	</form>

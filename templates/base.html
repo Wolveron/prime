@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Богатое меню и веселое настроение, вкусные смузи и уютную обстановку, внимательнейшее отношение к вашим пожеланиям к составу коктейля и немедленное их исполнение. Заходите, мы ждем с нетерпением!">
+		<meta name="keywords" content="Smoothies-mama, Smoothies, Смузи-Мама, Смузи">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>Smoothies-Mama</title>
+
+		<!-- Bootstrap -->
+		<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'css/dls.css' %}">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<style type="text/css">
+/*			.content-col {
+			    background-image: url("{% static 'img/main_theme.jpg' %}");
+				background-size: 100% auto;
+				background-repeat: repeat-y;
+				background-position: center top;
+			}*/
+		</style>
+	</head>
+
+	<body>
+	
+<!-- 		<div class="header text-center">
+			<h1><em>Смузи-Мама</em></h1>
+			<h3>Яркие моменты внутри!</h3>
+		</div> -->
+
+		<div class="container-fluid">
+
+			<div class="navigation-col top-stick col-lg-3 col-md-3 col-sm-3">
+			<!-- Колонка навигации -->	
+				<div class="text-center">
+					<div class="hidden-xs">
+						<img class="logo" src="{% static 'img/main_logo.jpg' %}" alt="Logo">
+					</div>
+					<div class="navbar spclr">
+						<div class="nav_but conteiner-fluid">
+							<div>
+								<button class="navbar-toggler visible-xs" type="button" data-toggle="collapse" 
+									data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+									aria-expanded="false" aria-label="Toggle navigation">
+								  	<span class="glyphicon glyphicon-align-right" aria-hidden="true"></span>
+						 		  	<img src="{% static 'img/main_logo.jpg' %}" width="75" height="75" alt="">
+								  	<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+								</button>
+							</div>
+						</div>
+						<div class="collapse navbar-collapse spclr" id="navbarSupportedContent">
+							<ul class="nav nav-pills nav-stacked">
+							{% block navig %}
+
+								<!-- Данные расширяющкго шаблона -->
+
+							{% endblock navig %}
+							</ul>
+						</div>
+					</div>					
+				</div>
+			</div>
+
+			<div class="content-col col-lg-9 col-md-9 col-sm-9">
+			<!-- Колонка контента -->
+				{% block cont %}
+				
+				<!-- Данные расширяющкго шаблона -->
+
+				{% endblock cont %}
+			</div>
+
+		</div>
+		
+		<footer>	
+			<div class="footer">
+				<div class="container hidden-xs">
+					<a href="admin.html">
+					<p>Все материалы сайта принадлежат компании "Смузи Мама". <br>
+			  		Копирование без согласия правообладателя запрещено.</p>	
+					</a>
+				</div>
+			  	<div class="container visible-xs">
+			  		<p>Все права защищены. </p>
+			  	</div>
+			</div>
+		</footer>
+	  	
+
+
+	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+
+ 	 </body>
+</html>

@@ -1,64 +1,59 @@
 html, body {
 	height: 100%;
 	width: 100%;
+	background-color: white;
 }
-
+.top-stick {
+	position: sticky;
+	top: 5px;
+	z-index: 1;
+}
+.clear {
+	clear: both;
+}
 .spclr {
 	margin: 0;
 	padding: 0;
 	border: none;
 }
-
-.header {
-	min-height: 244px;
-	max-height: 244px;
-}
-
-.slogan {
-	background-color: pink;
-	border: outset 3px purple;
-	border-radius: 20px;
-	width: 85%;
-	max-width: 500px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0;
-}
-.slogan h3 {
-	margin: 0;
-	padding: 0;
-}
-
-	.logo_left {
-		text-align: center;
-		height: 244px;
-	}
-
-	.logo_center {
-		text-align: center;
-	}
-		.logo_center img{
-			border:solid 0px;
-			border-radius: 95px;
-			clear: both;
-		}
-
-	.logo_right {
-		text-align: center;
-		height: 244px;
-	}
-
-	.logo_left h4, .logo_right h4 {
+@media (min-width: 768px) {
+    .full-align {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 200px;
-		font-family: Courier New, Courier, monospace;
-		font-size: 15px;
 	}
+}
 
-.navbar button, .navbar button:hover, .navbar button:focus {
+/*---------------------------------------------------*/
+/*-------------------- B A S E ----------------------*/
+/*---------------------------------------------------*/
+
+.header {
+	color: indigo;
+	margin: 0;
+	padding: 25px;
+	border-bottom: ridge 4px gold;
+	background-color: yellowgreen;
+}
+.logo {
+	width: 100%;
+	max-width: 175px;
+}
+.content-col {
+	border-left: ridge 4px gold;
+	background-color: white;
+}
+@media (max-width: 768px) {
+    .content-col {
+		border: none;
+	}
+}
+.navigation-col {
+	padding: 15px;
+}
+.navbar button, 
+.navbar button:hover, 
+.navbar button:focus {
 	border: none;
 	margin: 0;
 	padding: 1px;
@@ -69,19 +64,11 @@ html, body {
 	text-align: center;
 	outline: none;
 }
-
-.nav_st {
-	position: sticky;
-	top: 0;
-	z-index: 1;
-}
-
 .nav_but {	
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-
 .nav-pills>li>a {
     border: solid 2px black;
     border-width: 2px 1px 2px 1px;
@@ -95,20 +82,17 @@ html, body {
     color: white;
     background-color: yellowgreen;
 }
-
 .nav-pills>li>a:hover,
 .nav-pills>li.active>a:hover {
     color: white;
     background-color: green;	
 }
-
 .content {
 	min-height: 100%;
 	min-width: 100%;
 	padding: 0;
 	margin: 0;
 }
-
 .footer {
 	background-color: black;
 	color: white;
@@ -116,34 +100,37 @@ html, body {
 	height: 50px;
 	margin: 0;
 	padding: 5px;
+	border-top: ridge 2px gold;
 }
-		.footer p {
-			margin: 0;
-			padding: 0;
-		}
-
-.clear {
-	clear: both;
+.footer p {
+	margin: 0;
+	padding: 0;
+	color: white;
 }
 
-.news-post-text {
+
+/*---------------------------------------------------*/
+/*-------------------- M A I N ----------------------*/
+/*---------------------------------------------------*/
+
+.address-box {
+	border: ridge 7px red;
+	border-radius: 30px;
 	background-color: white;
-	border: solid 2px greenyellow;
+	width: 95%;
+	padding: 5px;
+}
+.news-post {
+	padding: 7px;
+	border: ridge 4px green;
+	background-color: yellowgreen;
 	border-radius: 15px;
 }
-
 .news-post-image {
 	display: block;
 	width: 100%;
 	height: auto;
-	max-width: 200px;
-
-}
-
-.plato {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	border-radius: 15px;
 }
 
 /*---------------------------------------------------*/
@@ -156,28 +143,20 @@ html, body {
 	border: solid 2px orange;
 	border-radius: 10px;
 }
-
 .about2 img {
 	width: 80%;
 	border: solid 2px orange;
 	border-radius: 10px;
 }
-
 .txt-pnl {
 	border-style: ridge;
 	border-width: 8px;
 	border-color: green;
 }
-
 #vegetarian {
 	text-decoration: none;
 	color: green;
 }
-
-.interview {
-	text-align: center;
-}
-
 @media (min-width: 768px) {
     .about1, .about2, .map_set {
 		display: flex;
@@ -185,7 +164,6 @@ html, body {
 		justify-content: center;
 	}
 }
-
 @media (max-width: 767px) {
     .interview iframe {
 		width: 80%;
@@ -200,9 +178,10 @@ html, body {
 .map iframe {
 	width: 100%;
 }
-
 @media (max-width: 767px) {
 	.map iframe {
 		height: auto;
 	}
 }
+
+

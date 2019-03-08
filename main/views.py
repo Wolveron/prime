@@ -48,6 +48,9 @@ def panel(request):
 			news.objects.all().delete()
 			return render(request, 'panel.html', {"Title":"Очищено"})
 		else:
-			news_add(request.POST.get("TitleNews"), request.POST.get("ContentNews"))
+			news_add(request.POST.get("TitleNews"), request.POST.get("ContentNews"), request.POST.get("ImageNews"))
 			return render(request, 'panel.html', {"Title":"Продолжим?"})
 
+def testpage(request):
+	News = news.objects.all()
+	return render(request, 'testpage.html', {"News" : News})
