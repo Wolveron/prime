@@ -29,17 +29,18 @@ html, body {
 /*---------------------------------------------------*/
 
 .header {
-	color: indigo;
+	color: gold;
 	margin: 0;
 	padding: 25px;
 	border-bottom: ridge 4px gold;
-	background-color: yellowgreen;
+	background-color: black;
 }
 .logo {
 	width: 100%;
 	max-width: 175px;
 }
 .content-col {
+	padding-top: 15px;
 	border-left: ridge 4px gold;
 	background-color: white;
 }
@@ -87,12 +88,6 @@ html, body {
     color: white;
     background-color: green;	
 }
-.content {
-	min-height: 100%;
-	min-width: 100%;
-	padding: 0;
-	margin: 0;
-}
 .footer {
 	background-color: black;
 	color: white;
@@ -117,6 +112,7 @@ html, body {
 	border: ridge 7px red;
 	border-radius: 30px;
 	background-color: white;
+	color: black;
 	width: 95%;
 	padding: 5px;
 }
