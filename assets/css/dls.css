@@ -31,7 +31,7 @@ html, body {
 .header {
 	color: gold;
 	margin: 0;
-	padding: 25px;
+	padding: 5px;
 	border-bottom: ridge 4px gold;
 	background-color: black;
 }
