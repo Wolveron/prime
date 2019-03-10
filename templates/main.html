@@ -11,16 +11,16 @@
 {% endblock navig %}
 
 {% block cont %}
-
+	
 	{% for New in News %}
 	<div class="news-post full-align">
-		<div class="news-post-img col-lg-4 col-md-4 col-sm-4">
+		<div class="news-post-img col-sm-3">
 			<a href="#">
-				<img class="news-post-image" src="{% static 'img/place1.jpg' %}" alt="Picture">
+				<img class="news-post-image" src="{{New.image.url}}" alt="Picture">
 			</a>
 		</div>
-		<div class="news-post-text col-lg-8 col-md-8 col-sm-8">
-			<h4 class="news-post-title">{{New.title}}</h4>
+		<div class="news-post-text col-sm-9">
+			<h2 class="news-post-title">{{New.title}}</h2>
 			<h5 class="news-post-date">{{New.date}}</h5>
 			<h5 class="news-post-content">{{New.content}}</h5> 
 		</div>

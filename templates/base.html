@@ -36,29 +36,28 @@
 	<body>
 	
 		<div class="header text-center row">
-			<div class="col-lg-3 col-md-3 col-sm-3">
+			<div class="col-sm-3">
 				<h2><em>Смузи-Мама</em></h1>
 				<h4>Яркие моменты внутри!</h3>
 			</div>
-			<div class="hidden-xs col-lg-9 col-md-9 col-sm-9">
+			<div class="hidden-xs col-sm-9">
 				<h4 class="address-box"><em>
 					Санкт-Петербург, Лиговский проспект 74, 
 					<br>
 					Лофт-проект «Этажи», Контейнерная улица, кафе 1,15.
-					<br>
 					<br>
 					Время работы: Ежедневно	с 11:00 до 21:00
 				</em></h4>					
 			</div>	
 		</div>
 
-		<div class="container-fluid">
+		<div class="base container-fluid">
 
-			<div class="navigation-col top-stick col-lg-3 col-md-3 col-sm-3">
+			<div class="navigation-col top-stick col-sm-3">
 			<!-- Колонка навигации -->	
 				<div class="text-center">
 					<div class="hidden-xs">
-						<img class="logo" src="{% static 'img/main_logo.jpg' %}" alt="Logo">
+						<img class="logo" src="{% static 'img/logo.jpg' %}" alt="Logo">
 					</div>
 					<div class="navbar spclr">
 						<div class="nav_but conteiner-fluid">
@@ -67,7 +66,7 @@
 									data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
 									aria-expanded="false" aria-label="Toggle navigation">
 								  	<span class="glyphicon glyphicon-align-right" aria-hidden="true"></span>
-						 		  	<img src="{% static 'img/main_logo.jpg' %}" width="75" height="75" alt="">
+						 		  	<img src="{% static 'img/logo.jpg' %}" width="75" height="75" alt="">
 								  	<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
 								</button>
 							</div>
@@ -76,7 +75,7 @@
 							<ul class="nav nav-pills nav-stacked">
 							{% block navig %}
 
-								<!-- Данные расширяющкго шаблона -->
+								<!-- Данные расширяющего шаблона -->
 
 							{% endblock navig %}
 							</ul>
@@ -85,30 +84,32 @@
 				</div>
 			</div>
 
-			<div class="content-col col-lg-9 col-md-9 col-sm-9">
+			<div class="content-col col-sm-9">
 			<!-- Колонка контента -->
 				{% block cont %}
 				
-				<!-- Данные расширяющкго шаблона -->
+				<!-- Данные расширяющего шаблона -->
 
 				{% endblock cont %}
 			</div>
 
 		</div>
 		
-		<footer>	
-			<div class="footer">
-				<div class="container hidden-xs">
-					<a href="admin.html">
-					<p>Все материалы сайта принадлежат компании "Смузи Мама". <br>
-			  		Копирование без согласия правообладателя запрещено.</p>	
+		<div class="footer clear">
+				<div class="hidden-xs">
+					<a href="admin/">
+						<p>
+							Все материалы сайта принадлежат компании "Смузи Мама". 
+							<br>
+			  				Копирование без согласия правообладателя запрещено.
+			  			</p>	
 					</a>
 				</div>
-			  	<div class="container visible-xs">
+			  	<div class="visible-xs">
 			  		<p>Все права защищены. </p>
 			  	</div>
-			</div>
-		</footer>
+		</div>
+		
 	  	
 
 

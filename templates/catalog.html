@@ -9,7 +9,30 @@
 {% endblock navig %}
 
 {% block cont %}
-
-
+	
+	{% for Type in Types %}
+		<div class="clear"><h2>{{Type}}</h2></div>
+		<div>
+			{% for Product in Products %}
+				{% if Product.product_type == Type %}
+					<div class="product-box col-sm-4 col-lg-3">
+						<div class="product-cell text-center">
+							<div class="product-picture">
+								<img class="product-image" src="{{Product.image.url}}" alt="Picture">
+							</div>
+							<div class="product-name">
+								<h5>{{Product.name}}</h5>
+							</div>
+							<div class="product-price">
+								<h4>{{Product.price}} руб.</h4>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<hr class="clear">
+	
+	{% endfor %}
 
 {% endblock cont %}
