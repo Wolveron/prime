@@ -140,28 +140,42 @@ html, body {
 /*---------------- C A T A L O G --------------------*/
 /*---------------------------------------------------*/
 
+.product-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
 .product-box {
 	padding: 4px;
 }
-
 .product-cell {
 	border: ridge 4px gold;
 	border-radius: 10px;
-	min-height: 250px;
 	background-color: green;
 	padding: 4px;
+	text-align: center;
 }
 .product-picture {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 
+	object-fit: cover;
+	object-position: top;
 }
 .product-image {
 	display: block;
 	width: 95%;
-	height: auto;
 	border-radius: 15px;
+}
+.count-cart-add {
+	max-width: 50px;
+	padding: 3px;
+	text-align: center;
+}
+.form-cart-add {
+	display: flex;
+	justify-content: flex-end;
 }
 
 /*---------------------------------------------------*/

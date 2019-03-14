@@ -29,4 +29,5 @@ urlpatterns = [
     path('bag.html', views.bag),
     path('about.html', views.about),
     path('contact.html', views.contact),
+    path('addcart/', views.addcart),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
