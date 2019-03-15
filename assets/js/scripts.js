@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('.btn-cart-add').on('click', function(e){
+	$('.btn-cart-add').click(function(e){
 		e.preventDefault();
 		form = $(this).parents('form');
 		input = form.find('.count-cart-add');
@@ -12,7 +12,6 @@ $(document).ready(function(){
 		data.product_count = product_count;
 		data.product_price = product_price;
 		data['csrfmiddlewaretoken'] = token;
-		console.log(data);
 		var url = form.attr('action');
 		$.ajax({
 			url : url,
@@ -21,14 +20,38 @@ $(document).ready(function(){
 			cache : true,
 			success : function(data){
 				console.log('OK');
-				console.log(data);
+				$('#cart-size').text('('+data.total_order+')');
 			},
 			error: function(){
 				console.log('Wrong');
 			},
 		});
-
+		console.log('End');
+	}),
+	$('.btn-sale-remove').click(function(e){
+		e.preventDefault();
+		var name = $(this).data('name');
+		var token = $(this).parents('div').children('input').val();
+		var main = $(this).parents('.sale-item')
+		console.log(name);
+		data = {};
+		data.name = name;
+		data['csrfmiddlewaretoken'] = token;
+		var url = $(this).attr('action');
+		$.ajax({
+			url : url,
+			type : 'POST',
+			data : data,
+			cache : true,
+			success : function(data){
+				console.log('OK');
+				$('#cart-size').text('('+data.total_order+')');
+				main.remove();
+			},
+			error: function(){
+				console.log('Wrong');
+			},
+		});
 		console.log('End');
 	})
-
 })

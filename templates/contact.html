@@ -3,7 +3,13 @@
 {% block navig %}
 	<li role="Main"><a href="main.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Главная</a></li>
 	<li role="Catalog"><a href="catalog.html"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Каталог</a></li>
-	<li role="Bag"><a href="bag.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Корзина</a></li>
+	<li role="Bag"><a href="bag.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Корзина
+		<span id="cart-size">
+			{% if Cart != 0%}
+				({{Cart}})
+			{% endif %}
+		</span>
+	</a></li>
 	<li role="About"><a href="about.html"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> История</a></li>
 	<li role="Contact" class="active"><a href="#"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Контакты</a></li>
 {% endblock navig %}
