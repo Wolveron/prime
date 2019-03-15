@@ -23,3 +23,8 @@ class CartAdmin(admin.ModelAdmin):
 	list_display = [ field.name for field in Cart._meta.fields ]
 
 admin.site.register(Cart, CartAdmin)
+
+class OrderAdmin(admin.ModelAdmin):
+	list_display = [ field.name for field in Order._meta.fields ]
+
+admin.site.register(Order, OrderAdmin)

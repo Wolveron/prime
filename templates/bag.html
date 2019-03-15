@@ -33,5 +33,18 @@
 	</div>
 	<hr class="clear">
 	{% endfor %}
+	<form method="POST" action="orderCreate" id="order_form">
+		{% csrf_token %}
+		<div class="form-group">
+    		<label for="address_field">Адрес</label>
+    		<input type="text" class="form-control" name="address" id="address_field" placeholder="СПб, ул. Московская, д.39, кв.2">
+  		</div>
+  		<div class="form-group">
+    		<label for="contact_field">Контакты</label>
+    		<input type="text" class="form-control" name="contact" id="contact_field" placeholder="+7-9**-***-**-** Иван">
+  		</div>
+  		<button class="btn btn-success" type="submit">Оформить заказ</button>
+	</form>
+	<br><hr>
 
 {% endblock cont %}

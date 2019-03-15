@@ -4,6 +4,7 @@ from django.db import models
 
 class New(models.Model):
 	title = models.CharField(max_length=255, verbose_name=u'Заголовок')
+	short = models.TextField(max_length=500, verbose_name=u'Описание', default='Подробности внутри')
 	content = models.TextField(verbose_name=u'Содержание')
 	image = models.FileField(default='img/logo.jpg', verbose_name=u'Изображение')
 	date = models.DateField(auto_now_add=True)
@@ -45,3 +46,12 @@ class Cart(models.Model):
 	class Meta:
 		verbose_name = u'Корзина'
 		verbose_name_plural = u'Корзины'
+
+class Order(models.Model):
+	order_list = models.TextField(verbose_name=u'Список')
+	total = models.IntegerField(verbose_name=u'Сумма', default=0)
+	address = models.TextField(verbose_name=u'Адрес')
+	contact = models.TextField(verbose_name=u'Контакты')
+	class Meta:
+		verbose_name = u'Заказ'
+		verbose_name_plural = u'Заказы'

@@ -39,7 +39,26 @@ def contact(request):
 			email=request.POST.get("email"),
 			context=request.POST.get("context"))
 		mail.save()
-		return render(request, 'thanks.html', {"Name" : request.POST.get("name"), "Cart" : cart,})
+		text = "Благодарим за Ваш отзыв, " + request.POST.get('name') + "! "
+		return render(request, 'thanks.html', {"Text" : text, "Cart" : cart,})
+
+def orderCreate(request):
+	if request.method != "POST":
+		return HttpResponsePermanentRedirect('main.html')
+	else:
+		cart = orderSize(request)
+		session_key = request.session.session_key
+		basket = Cart.objects.filter(session_key=session_key)
+		order = Order(order_list="Заказ:")
+		for item in basket:
+			order.order_list = order.order_list + '\n' + item.product.name + " " + str(item.count) + " шт. на сумму: " + str(item.total_price)
+			order.total += item.total_price
+		order.address = request.POST.get("address")
+		order.contact = request.POST.get("contact")
+		order.save()
+		basket.delete()
+		text = "Благодарим за Ваш заказ! В ближайшее время с Ваши свяжется наш оператор для подтверждения заказа. "
+		return render(request, 'thanks.html', {"Text" : text, "Cart" : cart,})		
 
 def addcart(request):
 	data = request.POST

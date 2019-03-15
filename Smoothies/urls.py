@@ -31,4 +31,5 @@ urlpatterns = [
     path('contact.html', views.contact),
     path('addcart/', views.addcart),
     path('saleRemove/', views.saleremove),
+    path('orderCreate', views.orderCreate),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
