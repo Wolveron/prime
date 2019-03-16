@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponsePermanentRedirect, JsonResponse
 from .models import *
+from itertools import chain
 # Create your views here.
 
 def basePrime(request):
@@ -15,7 +16,15 @@ def main(request):
 
 def catalog(request):
 	cart = orderSize(request)
-	Products = Product.objects.all().order_by('product_type')
+	full = Product.objects.all().order_by('product_type')
+	if request.method == "POST" and request.POST.get("search") != "":
+		q = request.POST.get("search")
+		Products = []
+		for item in full:
+			if q in item.name or q in item.members or q in item.description or q in item.product_type:
+				Products.append(item)
+	else:
+		Products = full
 	Types = []
 	for some in Products:
 		if some.product_type in Types:
@@ -28,7 +37,10 @@ def bag(request):
 	session_key = request.session.session_key
 	cart = orderSize(request)
 	sales = Cart.objects.filter(session_key=session_key)
-	return render(request, 'bag.html', {"Cart" : cart, "Sales" : sales,})
+	total = 0
+	for item in sales:
+		total = total + item.total_price 
+	return render(request, 'bag.html', {"Cart" : cart, "Sales" : sales, "Total" : total})
 
 def about(request):
 	cart = orderSize(request)
@@ -82,11 +94,28 @@ def saleremove(request):
 	data = request.POST
 	session_key = request.session.session_key
 	name = data.get('name')
+	count = data.get('count')
 	product = Product.objects.get(name=name)
-	order = Cart.objects.get(session_key=session_key, product=product)
-	order.delete()
+	sales = Cart.objects.filter(session_key=session_key)
+	total = 0
+	for item in sales:
+		if item.product == product:
+			new_count = int(item.count) - int(count)
+			new_total_price = int(product.price) * new_count
+			if new_count <= 0:
+				item.delete()
+			else:
+				item.count = new_count
+				item.total_price = new_total_price
+				item.save()
+				total = total + item.total_price
+		else:		
+			total = total + item.total_price 
 	cart_size = {}
 	cart_size['total_order'] = orderSize(request)
+	cart_size['new_total_price'] = new_total_price
+	cart_size['new_count'] = new_count
+	cart_size['total'] = total
 	return JsonResponse(cart_size)
 
 

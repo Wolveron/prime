@@ -15,9 +15,25 @@
 {% endblock navig %}
 
 {% block cont %}
-
+	<div class="row prime-box">
+		<form method="POST" action="catalog.html">
+			{% csrf_token %}
+			<div class="col-lg-6">
+				<div class="input-group">
+					<input type="text" class="form-control" name="search" placeholder="Что предпочитаете?">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="submit">Поиск</button>
+					</span>
+				</div>  
+			</div>
+		</form>
+	</div>
+	<br class="clear">
+	<div>
 	{% for Type in Types %}
-		<div class="category-pr"><h2 class="space">{{Type}}</h2></div>
+		<div class="category-pr">
+			<h2 class="space">{{Type}}</h2>
+		</div>
 		<div class="product-list">
 			{% for Product in Products %}
 				{% if Product.product_type == Type %}
@@ -32,7 +48,7 @@
 							<div class="product-price">
 								<h4>{{Product.price}} руб.</h4>
 							</div>
-							<form method="POST" action="addcart/" class="form-cart-add form-inline">
+							<form method="POST" action="addcart" class="form-cart-add form-inline">
 								{% csrf_token %}
 								<div class="form-group">
 								    <input class="count-cart-add form-control" type="number" value="1">
@@ -50,8 +66,7 @@
 				{% endif %}
 			{% endfor %}
 		</div>
-		<hr class="clear">
-	
+	<hr class="clear">
 	{% endfor %}
-
+	</div>
 {% endblock cont %}

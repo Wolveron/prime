@@ -7,7 +7,7 @@
 	<li role="Catalog"><a href="catalog.html"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Каталог</a></li>
 	<li role="Bag" class="active"><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Корзина
 		<span id="cart-size">
-			{% if Cart != 0%}
+			{% if Cart != 0 %}
 				({{Cart}})
 			{% endif %}
 		</span>
@@ -17,35 +17,66 @@
 {% endblock navig %}
 
 {% block cont %}
-
-	{% for Sale in Sales %}
-	<div class="center-box prime-box">
-		<div class="sale-img col-sm-3">
-			<img class="sale-image" src="{{Sale.product.image.url}}" alt="Picture">
+	{% if Cart != 0 %}
+		<div class="prime-box center-box">
+			<div class="slogan-pr text-center">
+				<h1>Прекрасный выбор!</h1>
+			</div>
 		</div>
-		<div class="sale-text col-sm-9">
-			<h2 class="sale-name">{{Sale.product.name}}</h2>
-			<h5 class="sale-count">{{Sale.count}}</h5>
-			<h5 class="sale-total-price">{{Sale.total_price}}</h5>
-			{% csrf_token %} 
-			<button class="btn-sale-remove btn btn-success" type="button" action="saleRemove/" data-name="{{Sale.product.name}}">Убрать</button>
+		<br>
+		{% for Sale in Sales %}
+		<div class="center-box prime-box sale-item">
+			<div class="sale-img col-sm-3">
+				<img class="sale-image" src="{{Sale.product.image.url}}" alt="Picture">
+			</div>
+			<div class="sale-text col-sm-9">
+				<h2 class="sale-name">{{Sale.product.name}}</h2>
+				<h5 class="sale-members">{{Sale.product.members}}</h5>
+				<h3 class="sale-total">{{Sale.count}} шт. на {{Sale.total_price}} руб.</h3>
+				{% csrf_token %} 
+				<form method="POST" action="addcart" class="form-cart-del form-inline">
+					{% csrf_token %}
+					<div class="form-group">
+					    <input class="count-cart-del form-control" type="number" value="0">
+					</div>
+					<div class="form-group">
+						<button class="btn-sale-remove btn btn-success" type="button" 
+							action="saleRemove" data-name="{{Sale.product.name}}">Убрать
+						</button>
+					</div>
+					<div class="clear"></div>
+				</form>
+			</div>
 		</div>
-	</div>
-	<hr class="clear">
-	{% endfor %}
-	<div class="prime-box">
-		<form method="POST" action="orderCreate" id="order_form">
-			{% csrf_token %}
-			<div class="form-group">
-	    		<label for="address_field">Адрес</label>
-	    		<input type="text" class="form-control" name="address" id="address_field" placeholder="СПб, ул. Московская, д.39, кв.2">
-	  		</div>
-	  		<div class="form-group">
-	    		<label for="contact_field">Контакты</label>
-	    		<input type="text" class="form-control" name="contact" id="contact_field" placeholder="+7-9**-***-**-** Иван">
-	  		</div>
-	  		<button class="btn btn-success" type="submit">Оформить заказ</button>
-		</form>
-	</div>
-
+		<br class="clear">
+		{% endfor %}
+		<div class="prime-box center-box">
+			<div class="slogan-pr text-center">
+				<h3 class="total">Итого: {{Total}} руб.</h3>
+			</div>
+		</div>
+		<br>
+		<div class="prime-box">
+			<form method="POST" action="orderCreate" id="order_form">
+				{% csrf_token %}
+				<div class="form-group">
+		    		<label for="address_field">Адрес</label>
+		    		<input type="text" class="form-control" name="address" id="address_field" placeholder="СПб, ул. Московская, д.39, кв.2" required>
+		  		</div>
+		  		<div class="form-group">
+		    		<label for="contact_field">Контакты</label>
+		    		<input type="text" class="form-control" name="contact" id="contact_field" placeholder="+7-9**-***-**-** Иван" required>
+		  		</div>
+		  		<div class="center-box">
+		  			<button class="btn btn-success" type="submit">Оформить заказ</button>
+				</div>
+			</form>
+		</div>
+	{% else %}
+		<div class="prime-box center-box">
+			<div class="slogan-pr text-center">
+				<h1>Почему-то Ваша корзина пуста...</h1>
+			</div>
+		</div>
+	{% endif %}
 {% endblock cont %}

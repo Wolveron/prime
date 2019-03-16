@@ -31,11 +31,12 @@ $(document).ready(function(){
 	$('.btn-sale-remove').click(function(e){
 		e.preventDefault();
 		var name = $(this).data('name');
-		var token = $(this).parents('div').children('input').val();
-		var main = $(this).parents('.sale-item')
-		console.log(name);
+		var count = $(this).parents('form').find('.count-cart-del').val();
+		var token = $(this).parents('form').children('input').val();
+		var main = $(this).parents('.sale-item');
 		data = {};
 		data.name = name;
+		data.count = count;
 		data['csrfmiddlewaretoken'] = token;
 		var url = $(this).attr('action');
 		$.ajax({
@@ -45,8 +46,19 @@ $(document).ready(function(){
 			cache : true,
 			success : function(data){
 				console.log('OK');
-				$('#cart-size').text('('+data.total_order+')');
-				main.remove();
+				if (data.total <= 0) {
+					location.reload();
+				}
+				else{
+					if (data.new_count <= 0) {
+						main.remove(); 
+					}
+					else {
+						main.find('.sale-total').text(data.new_count + ' шт. на ' + data.new_total_price + ' руб.');
+					};
+					$('.total').text('Итого: ' + data.total + ' руб.')
+					$('#cart-size').text('('+data.total_order+')');
+				}
 			},
 			error: function(){
 				console.log('Wrong');
