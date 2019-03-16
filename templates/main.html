@@ -12,14 +12,14 @@
 			{% endif %}
 		</span>
 	</a></li>
-	<li role="About"><a href="about.html"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> История</a></li>
+	<li role="About"><a href="about.html"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> О нас</a></li>
 	<li role="Contact"><a href="contact.html"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Контакты</a></li>
 {% endblock navig %}
 
 {% block cont %}
 	
 	{% for New in News %}
-	<div class="news-post full-align">
+	<div class="news-post prime-box full-align">
 		<div class="news-post-img col-sm-3">
 			<a href="#">
 				<img class="news-post-image" src="{{New.image.url}}" alt="Picture">
@@ -31,7 +31,7 @@
 			<p class="news-post-content">{{New.short}}</p> 
 		</div>
 	</div>
-	<hr class="clear">
+	<br class="clear">
 	{% endfor %}
 
 {% endblock cont %}

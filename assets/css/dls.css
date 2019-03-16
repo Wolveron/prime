@@ -3,18 +3,39 @@ html, body {
 	width: 100%;
 	background-color: white;
 }
-.top-stick {
-	position: sticky;
-	top: 5px;
-	z-index: 1;
+
+/*---------------------------------------------------*/
+/*------------ P R I M E - E D I T I O N ------------*/
+/*---------------------------------------------------*/
+
+.Prime {
+	background-color: green;
+	--prime-border-color: gold;
+	--prime-background-color: white;
+	--prime-box-shadow: black;
+	font-family: Lobster, cursive;
 }
-.clear {
-	clear: both;
+.prime-box {
+	border: ridge 4 gold;
+	border-width: 4px;
+	border-radius: 30px;
+	background-color: white;
+	box-shadow: 4px 2px 4px black;
+	padding: 15px;
 }
-.spclr {
+.center-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.space {
 	margin: 0;
 	padding: 0;
 	border: none;
+}
+.clear {
+	clear: both;
 }
 @media (min-width: 768px) {
     .full-align {
@@ -23,61 +44,65 @@ html, body {
 		justify-content: center;
 	}
 }
+/*----------------------------------*/
+/*-----------H E A D E R------------*/
 
-/*---------------------------------------------------*/
-/*-------------------- B A S E ----------------------*/
-/*---------------------------------------------------*/
-
-.header {
-	color: white;
-	margin: 0;
-	padding: 5px;
+.header-box-pr {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	border-bottom: ridge 4px gold;
-	background-color: green;
-	text-shadow: 1px 1px 2px black, 0 0 1em red;
+	background-color: white;
+	box-shadow: 4px 3px 3px black;
 }
-.address-box {
-	border: ridge 4px gold;
+.logo-pr {
+	max-height: 150px;
+	max-width: 150px;
+}
+.slogan-pr {
+	color: orange;
+	text-shadow: 3px 2px 2px black;
+	margin: 5px;
+}
+.liner-pr {
+	max-height: 200px;
+	width: auto;
+}
+.address-pr {
+	border-radius: 15px;
+	padding: 5px;
+	color: whitesmoke;
+	text-align: center;
+}
+
+/*----------------------------------*/
+/*-------N A V I G A T I O N--------*/
+
+.navigator-box-pr {
+	position: sticky;
+	top: 5px;
+	z-index: 1;
+}
+.nav li {
+	padding: 5px;
+}
+.navbar {
+	border: ridge 4 gold;
+	border-width: 4px;
 	border-radius: 30px;
 	background-color: white;
-	color: black;
-	width: 95%;
+	box-shadow: 4px 2px 4px black;
 	padding: 5px;
-	text-shadow: none;
-}
-.content-col {
-	padding-top: 15px;
-	border-left: ridge 4px gold;
-	background-color: white;
-	min-height: 500px;
-}
-@media (max-width: 768px) {
-    .content-col {
-		border: none;
-	}
-}
-.empty {
-	min-height: 100%;
-}
-.navigation-col {
-	padding: 15px;
-}
-.logo {
-	width: 100%;
-	max-width: 175px;
 }
 .navbar button, 
 .navbar button:hover, 
 .navbar button:focus {
-	border: none;
 	margin: 0;
-	padding: 1px;
 	background-color: white;
 	font-size: 25px;
-	border: solid 1px black;
-	border-radius: 37px;
+	border: none;
 	text-align: center;
-	outline: none;
+	width: 120px;
 }
 .nav_but {	
 	display: flex;
@@ -85,24 +110,41 @@ html, body {
 	justify-content: center;
 }
 .nav-pills>li>a {
-    border: ridge 2px black;
-    border-radius: 26px;
-	background-color: gold;
+    border: ridge 4px silver;
+    border-radius: 21px;
+	background-color: whitesmoke;
+	width: 100%;
+	box-shadow: 2px 1px 2px black;
 	font-size: 20px;
-	color: black;
+	color: green;
+	text-shadow: 1px 1px 2px black;
+	text-align: center;
 }
 .nav-pills>li.active>a, 
 .nav-pills>li.active>a:focus {
     color: white;
     background-color: yellowgreen;
     text-shadow: 1px 1px 2px black, 0 0 1em green;
+    box-shadow: none;
 }
 .nav-pills>li>a:hover,
 .nav-pills>li.active>a:hover {
     color: white;
     background-color: green;
-    text-shadow: 1px 1px 2px black;	
+    text-shadow: 1px 1px 2px black;
+    box-shadow: none;	
 }
+
+/*----------------------------------*/
+/*----------C O N T E N T-----------*/
+
+.content-col-pr {
+	min-height: 500px;
+}
+
+/*----------------------------------*/
+/*-----------F O O T E R------------*/
+
 .footer {
 	background-color: black;
 	color: white;
@@ -110,7 +152,7 @@ html, body {
 	height: 50px;
 	margin: 0;
 	padding: 5px;
-	border-top: ridge 2px gold;
+	border-top: ridge 4px gold;
 }
 .footer p {
 	margin: 0;
@@ -118,17 +160,10 @@ html, body {
 	color: white;
 }
 
-
 /*---------------------------------------------------*/
 /*-------------------- M A I N ----------------------*/
 /*---------------------------------------------------*/
 
-.news-post {
-	padding: 7px;
-	border: ridge 4px green;
-	background-color: yellowgreen;
-	border-radius: 15px;
-}
 .news-post-image {
 	display: block;
 	width: 100%;
@@ -140,6 +175,18 @@ html, body {
 /*---------------- C A T A L O G --------------------*/
 /*---------------------------------------------------*/
 
+.category-pr {
+	border: ridge 4px gold;
+	border-width: 4px;
+	border-radius: 30px;
+	background-color: white;
+	box-shadow: 4px 2px 4px black;
+	margin: 5px;
+	font-size: 30px;
+	color: aqua;
+	text-shadow: 3px 2px 2px black;
+	text-align: center;	
+}
 .product-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -148,13 +195,6 @@ html, body {
 }
 .product-box {
 	padding: 4px;
-}
-.product-cell {
-	border: ridge 4px gold;
-	border-radius: 10px;
-	background-color: green;
-	padding: 4px;
-	text-align: center;
 }
 .product-picture {
 	display: flex;
@@ -182,12 +222,6 @@ html, body {
 /*-------------------- B A G ------------------------*/
 /*---------------------------------------------------*/
 
-.sale-item {
-	padding: 7px;
-	border: ridge 4px green;
-	background-color: yellowgreen;
-	border-radius: 15px;
-}
 .sale-image {
 	display: block;
 	width: 100%;
@@ -202,18 +236,17 @@ html, body {
 .about1 img {
 	width: 80%;
 	max-width: 300px;
-	border: solid 2px orange;
 	border-radius: 10px;
 }
 .about2 img {
 	width: 80%;
-	border: solid 2px orange;
 	border-radius: 10px;
 }
 .txt-pnl {
 	border-style: ridge;
 	border-width: 8px;
 	border-color: green;
+	color: black;
 }
 #vegetarian {
 	text-decoration: none;
@@ -245,5 +278,4 @@ html, body {
 		height: auto;
 	}
 }
-
 

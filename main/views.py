@@ -3,6 +3,11 @@ from django.http import HttpResponse, HttpResponsePermanentRedirect, JsonRespons
 from .models import *
 # Create your views here.
 
+def basePrime(request):
+	return render(request, 'base_prime.html')
+
+
+
 def main(request):
 	cart = orderSize(request)
 	News = New.objects.all()

@@ -25,91 +25,83 @@
 	</head>
 
 	<body>
-	
-		<div class="header text-center row">
-			<div class="col-sm-3">
-				<h2><em>Смузи-Мама</em></h1>
-				<h4>Яркие моменты внутри!</h3>
-			</div>
-			<div class="hidden-xs col-sm-9">
-				<h4 class="address-box"><em>
-					Санкт-Петербург, Лиговский проспект 74, 
-					<br>
-					Лофт-проект «Этажи», Контейнерная улица, кафе 1,15.
-					<br>
-					Время работы: Ежедневно	с 11:00 до 21:00
-				</em></h4>					
-			</div>	
-		</div>
+		<div class="Prime space">
 
-		<div class="base container-fluid">
-
-			<div class="navigation-col top-stick col-sm-3">
-			<!-- Колонка навигации -->	
-				<div class="text-center">
-					<div class="hidden-xs">
-						<img class="logo" src="{% static 'img/logo.jpg' %}" alt="Logo">
+			<div class="row header-box-pr">
+					<img class="logo-pr" src="{% static 'img/logo.jpg' %}" alt="Logo">
+					<div class="slogan-pr text-center space">
+						<h1 class="space"><em>С м у з и - М а м а</em></h1>
+						<h3 class="space">Яркие моменты внутри!</h3>
 					</div>
-					<div class="navbar spclr">
-						<div class="nav_but conteiner-fluid">
-							<div>
-								<button class="navbar-toggler visible-xs" type="button" data-toggle="collapse" 
-									data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-									aria-expanded="false" aria-label="Toggle navigation">
+					<img class="liner-pr hidden-sm hidden-xs" src="{% static 'img/Line.png' %}" alt="Liner">				
+			</div>
+
+			<div class="address-pr space">
+				<h4><em>
+					Санкт-Петербург, Лиговский проспект 74, 
+					Лофт-проект «Этажи», Контейнерная улица, кафе 1,15.
+					<br>Время работы: Ежедневно	с 11:00 до 21:00
+				</em></h4>						
+			</div>
+
+			<div class="container-fluid navigator-box-pr">
+				<div class="navbar">
+					<div class="nav_but">
+						<div>
+							<button class="navbar-toggler visible-xs" type="button" data-toggle="collapse" 
+								data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+								aria-expanded="false" aria-label="Toggle navigation">
 								  	<span class="glyphicon glyphicon-align-right" aria-hidden="true"></span>
-						 		  	<img src="{% static 'img/logo.jpg' %}" width="75" height="75" alt="">
 								  	<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-								</button>
-							</div>
+							</button>
 						</div>
-						<div class="collapse navbar-collapse spclr" id="navbarSupportedContent">
-							<ul class="nav nav-pills nav-stacked">
+					</div>
+					<div class="collapse navbar-collapse spclr" id="navbarSupportedContent">
+						<ul class="nav nav-pills nav-justified">
 							{% block navig %}
 
-								<!-- Данные расширяющего шаблона -->
-
 							{% endblock navig %}
-							</ul>
-						</div>
-					</div>					
+						</ul>
+					</div>
 				</div>
 			</div>
 
-			<div class="content-col col-sm-9">
-			<!-- Колонка контента -->
-				{% block cont %}
-				
-				<!-- Данные расширяющего шаблона -->
+			<br>
 
-				{% endblock cont %}
+			<div class="content-box-pr container">
+				<div class="content-col-pr space">
+						{% block cont %}
+						
+						{% endblock cont %}
+				</div>
 			</div>
+			
+			<br class="clear">
 
-		</div>
-		
-		<div class="footer clear">
+			<div class="footer clear">
 				<div class="hidden-xs">
 					<a href="admin/">
 						<p>
 							Все материалы сайта принадлежат компании "Смузи Мама". 
 							<br>
-			  				Копирование без согласия правообладателя запрещено.
-			  			</p>	
+							Копирование без согласия правообладателя запрещено.
+						</p>	
 					</a>
 				</div>
-			  	<div class="visible-xs">
-			  		<p>Все права защищены. </p>
-			  	</div>
+				<div class="visible-xs">
+					<p>Все права защищены. </p>
+				</div>
+			</div>
+			
+		  	
+
+
+		    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		    <!-- Include all compiled plugins (below), or include individual files as needed -->
+		    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+			<script src="{% static 'js/scripts.js' %}"></script>
+
 		</div>
-		
-	  	
-
-
-	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	    <!-- Include all compiled plugins (below), or include individual files as needed -->
-	    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-		<script src="{% static 'js/scripts.js' %}"></script>
-
-
  	 </body>
 </html>

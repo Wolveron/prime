@@ -10,76 +10,76 @@
 			{% endif %}
 		</span>
 	</a></li>
-	<li role="About"><a href="about.html"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> История</a></li>
+	<li role="About"><a href="about.html"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> О нас</a></li>
 	<li role="Contact" class="active"><a href="#"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Контакты</a></li>
 {% endblock navig %}
 
 {% block cont %}
 
-<br>
+	<br>
 
-<h1 class="text-center">Как нас найти?</h1>
+	<h1 class="slogan-pr text-center">Как нас найти?</h1>
 
-<br>
+	<br>
 
-<div class="contact_prime">
-	<div class="map_set">
-		<div class="txt-col col-sm-6">
-			<div class="spclr">
-				<br>
-				<div class="txt-pnl panel panel-default">
-  					<div class="panel-body spclr">
-						<h4 align="center">
-							Санкт-Петербург, <br>
-							Лиговский проспект 74, <br>
-							Лофт-проект «Этажи», <br>
-							Контейнерная улица, кафе 1,15. <br>
-							Время работы: с 11:00 до 21:00 <br>
-							ежедневно
-						</h4>
- 					</div>
+	<div class="contact_prime prime-box">
+		<div class="map_set">
+			<div class="txt-col col-sm-6">
+				<div class="spclr">
+					<br>
+					<div class="txt-pnl panel panel-default">
+	  					<div class="panel-body spclr">
+							<h4 align="center">
+								Санкт-Петербург, <br>
+								Лиговский проспект 74, <br>
+								Лофт-проект «Этажи», <br>
+								Контейнерная улица, кафе 1,15. <br>
+								Время работы: с 11:00 до 21:00 <br>
+								ежедневно
+							</h4>
+	 					</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-sm-6">
-			<div class="map text-center spclr">
-				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1ef09a656992cb8bdd4e710735f1609be6826245790d7af3e6b8ee6c66b27f63&amp;source=constructor" height="400" frameborder="0"></iframe>
-			</div> 
+			<div class="col-sm-6">
+				<div class="map text-center spclr">
+					<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1ef09a656992cb8bdd4e710735f1609be6826245790d7af3e6b8ee6c66b27f63&amp;source=constructor" height="400" frameborder="0"></iframe>
+				</div> 
+			</div>
 		</div>
 	</div>
-</div>
 
-<hr class="clear">
+	<hr class="clear">
 
-<div>
-	<div class="panel panel-success">
-		<div class="panel-heading">
-			<h3 class="text-center panel-title">Ваши предложения и пожелания</h3>
-	  	</div>
-	  	<div class="panel-body">
-	    	<div class="mail_form">
-				<form method="POST" action="#" id="mail_form">
-				{% csrf_token %}
+	<div class="prime-box">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="text-center panel-title">Ваши предложения и пожелания</h3>
+		  	</div>
+		  	<div class="panel-body">
+		    	<div class="mail_form">
+					<form method="POST" action="#" id="mail_form">
+					{% csrf_token %}
 
-				  <div class="form-group">
-				    <label for="Name_field">Ф.И.О.</label>
-				    <input type="text" class="form-control" name="name" id="Name_field" placeholder="Иванов Иван Иванович">
-				  </div>
-				  <div class="form-group">
-				    <label for="Email_field">Email</label>
-				    <input type="email" class="form-control" name="email" id="Email_field" placeholder="name@example.com">
-				  </div>
-				  <div class="form-group">
-				    <label for="Context_field">Ваши пожелания / предложения</label>
-				    <textarea class="form-control" name="context" id="Context_field" rows="3"></textarea>
-				  </div>
-				  <button class="btn btn-success" type="submit">Отправить</button>
+					  <div class="form-group">
+					    <label for="Name_field">Ф.И.О.</label>
+					    <input type="text" class="form-control" name="name" id="Name_field" placeholder="Иванов Иван Иванович">
+					  </div>
+					  <div class="form-group">
+					    <label for="Email_field">Email</label>
+					    <input type="email" class="form-control" name="email" id="Email_field" placeholder="name@example.com">
+					  </div>
+					  <div class="form-group">
+					    <label for="Context_field">Ваши пожелания / предложения</label>
+					    <textarea class="form-control" name="context" id="Context_field" rows="3"></textarea>
+					  </div>
+					  <button class="btn btn-success" type="submit">Отправить</button>
 
-	    		</form>
+		    		</form>
 
-	    	</div>
-	  	</div>
+		    	</div>
+		  	</div>
+		</div>
 	</div>
-</div>
 
 {% endblock cont %}
