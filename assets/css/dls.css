@@ -29,6 +29,12 @@ html, body {
 	align-items: center;
 	flex-wrap: wrap;
 }
+.center-col {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 .space {
 	margin: 0;
 	padding: 0;
@@ -191,10 +197,13 @@ html, body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	align-items: flex-start;
+	align-items: stretch;
 }
 .product-box {
 	padding: 4px;
+}
+.product-box .prime-box {
+	height: 100%;
 }
 .product-picture {
 	display: flex;
