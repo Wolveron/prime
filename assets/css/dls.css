@@ -50,6 +50,12 @@ html, body {
 		justify-content: center;
 	}
 }
+.btn-success {
+	box-shadow: 2px 1px 2px black;
+	background-color: greenyellow;
+	color: white;
+	border: none;
+}
 /*----------------------------------*/
 /*-----------H E A D E R------------*/
 
@@ -107,6 +113,7 @@ html, body {
 	background-color: var(--prime-background-color);
 	font-size: 25px;
 	border: none;
+	outline: none;
 	text-align: center;
 	width: 120px;
 }
@@ -180,7 +187,17 @@ html, body {
 /*---------------------------------------------------*/
 /*---------------- C A T A L O G --------------------*/
 /*---------------------------------------------------*/
-
+#addMessage {
+	position: sticky;
+	top: 50px;
+	z-index: 200;
+	display: none;
+	border: solid 1px silver;
+	border-radius: 15px;
+	background-color: snow;
+	color: orange;
+	width: 100%;
+}
 .category-pr {
 	border: ridge 4px var(--prime-border-color);
 	border-width: 4px;

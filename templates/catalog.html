@@ -15,6 +15,9 @@
 {% endblock navig %}
 
 {% block cont %}
+	<div id="addMessage" class="text-center">
+		<h3>Добавлено в корзину</h3>
+	</div>
 	<div class="row prime-box">
 		<form method="POST" action="catalog.html">
 			{% csrf_token %}

@@ -20,7 +20,10 @@ $(document).ready(function(){
 			cache : true,
 			success : function(data){
 				console.log('OK');
+				$('#addMessage').show();
+				$('#addMessage').hide(2500);
 				$('#cart-size').text('('+data.total_order+')');
+				$('#cart-size-btn').text('('+data.total_order+')');
 			},
 			error: function(){
 				console.log('Wrong');
