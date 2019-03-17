@@ -18,22 +18,23 @@
 
 {% block cont %}
 	
-	{% for New in News %}
-	<div class="news-post prime-box center-box">
-		<div class="news-post-img col-sm-3">
-			<img class="news-post-image" src="{{New.image.url}}" alt="Picture">
+	<div class="prime-box">
+		<div class="news-post center-box">	
+			<div class="news-post-img col-sm-3">
+				<img class="news-post-image" src="{{News.image.url}}" alt="Picture">
+			</div>
+			<div class="news-post-text col-sm-9">
+				<h1 class="slogan-pr">{{News.title}}</h1>
+				<h5 class="news-post-date">{{News.date}}</h5>
+			</div>
 		</div>
-		<div class="news-post-text col-sm-9">
-			<h2 class="news-post-title">{{New.title}}</h2>
-			<h5 class="news-post-date">{{New.date}}</h5>
-			<p class="news-post-content">{{New.short}}</p>
-			<form action="post" method="GET">
-				<input class="hidden" name="id" type="text" value="{{New.id}}">
-				<button class="btn btn-success" type="submit">Подробности</button>
-			</form> 
+		<br class="clear">
+		<div>
+			{% for line in Text %}
+				<h4 class="News-text">{{line}}</h4>
+			{% endfor %}
 		</div>
 	</div>
 	<br class="clear">
-	{% endfor %}
 
 {% endblock cont %}

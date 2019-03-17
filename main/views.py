@@ -128,3 +128,9 @@ def orderSize(request):
 	for item in order:
 		cart += item.count
 	return cart
+
+def post(request):
+	cart = orderSize(request)
+	new = New.objects.get(id=request.GET.get('id'))
+	text = new.content.splitlines()
+	return render(request, 'news.html', {"News" : new, "Cart" : cart, "Text" : text, })
